@@ -3,6 +3,12 @@
     padding:0;
     box-sizing: inherit;
 }
+//breakpoint
+$bp-largest:75em;  //1200px
+$bp-large:68.75em; // 1100px
+$bp-medium:56.25em; //900px
+$bp-small:37.5em; //600px
+$bp-smallest:25em; //400px
 
 body{
     box-sizing: inherit;
@@ -20,6 +26,14 @@ body{
 html{
     font-size: 62.5%;
     box-sizing: border-box;
+
+    @media only screen and (max-width:$bp-large){
+        font-size:50%;
+    }
+
+    @media only screen and (max-width:$bp-smallest){
+        font-size:40%;
+    }
 }
 
 ::selection{
