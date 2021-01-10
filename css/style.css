@@ -416,7 +416,8 @@ html {
   position: relative;
   font-weight: 300;
   color: white;
-  overflow: hidden; }
+  overflow: hidden;
+  cursor: pointer; }
   .btn > * {
     display: inline-block;
     height: 100%;
