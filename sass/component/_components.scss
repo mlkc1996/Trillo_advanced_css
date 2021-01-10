@@ -496,44 +496,45 @@
 .btn{
     border: none;
     background-image: linear-gradient(to right,var(--color-primary-light),var(--color-primary-dark));
-    padding: 1.5rem 3rem;
-    border-radius: 10000px;
+    border-radius: 100px;
     text-transform: uppercase;
+    position: relative;
     font-weight:300 ;
     color: white;
-    display: flex;
-    flex-direction: column;
-    transition: background-image .1s;
     overflow: hidden;
+
+    &>*{
+        display: inline-block;
+        height:100%;
+        width:100%;
+        transition: all .3s;
+    }
     
     &__visible{
-        align-self: center;
-        position: relative;
-        transition: transform .1s;
-        opacity: 1;
+        padding: 2rem 7.5rem 
     }
 
     &__hidden{
-        position: relative;
-        z-index:10 ;
-        transform: translate(0,-30px);
-        transition: transform .1s;
-        margin-bottom: -1.5rem;
-        opacity: 0;
-
+        position: absolute;
+        top: -100%;
+        left:0;
+        padding:2rem 0;
     }
 
     &:hover &__visible{
-        transform: translateY(50px);
-        opacity: 0;
+        transform: translateY(100%);
     }
 
     &:hover &__hidden{
-        opacity: 1;
-        transform: translate(0,0px);
+        top:0;
     }
 
     &:hover{
         background-image: linear-gradient(to left,var(--color-primary-light),var(--color-primary-dark));
+    }
+
+    &:focus{
+        animation:pulstate 1s infinite;
+        outline:none;
     }
 }
